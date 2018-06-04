@@ -9,14 +9,19 @@ class IdeaFrom extends Component {
     };
 
     this.handelChange = this.handelChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handelChange(event) {
     const { name, value } = event.target;
-    event.preventDefault();
     this.setState({
       [name]: value
     });
+  }
+
+  handleSubmit(event) {
+
+    event.preventDefault();
   }
 
   render() {
@@ -25,8 +30,8 @@ class IdeaFrom extends Component {
     return (
       <form
         className="idea-box-form"
-        action=""
-        method="">
+        onSubmit={this.handleSubmit}
+      >
         <input
           className="idea-box-form-title"
           type="text"
