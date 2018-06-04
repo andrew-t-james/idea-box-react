@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import IdeaForm from './IdeaFrom';
+import IdeaCardList from './IdeaCardList';
 
 class App extends Component {
   constructor() {
@@ -11,11 +12,11 @@ class App extends Component {
     this.addIdea = this.addIdea.bind(this);
   }
 
-  addIdea(idea) {
-    const { ideas } = this.state;
+  addIdea(newIdea) {
+    const { ideasList } = this.state;
 
     this.setState({
-      ideasList: [...ideas, idea]
+      ideasList: [...ideasList, newIdea]
     });
   }
 
@@ -28,6 +29,7 @@ class App extends Component {
             <IdeaForm
               addIdea={this.addIdea}
             />
+            <IdeaCardList />
           </section>
         </article>
       </main>

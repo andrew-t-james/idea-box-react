@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IdeaCardList = () => {
+const IdeaCardList = (props) => {
   return (
     <section className="card-section">
       {

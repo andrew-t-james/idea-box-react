@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class IdeaFrom extends Component {
   constructor() {
@@ -14,14 +15,21 @@ class IdeaFrom extends Component {
 
   handelChange(event) {
     const { name, value } = event.target;
+
     this.setState({
       [name]: value
     });
   }
 
   handleSubmit(event) {
-
     event.preventDefault();
+
+    this.props.addIdea(this.state);
+
+    this.setState({
+      title: '',
+      body: ''
+    });
   }
 
   render() {
@@ -62,5 +70,9 @@ class IdeaFrom extends Component {
     );
   }
 }
+
+IdeaFrom.propTypes = {
+  addIdea: PropTypes.func
+};
 
 export default IdeaFrom;
