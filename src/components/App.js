@@ -7,7 +7,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      ideasList: [{title: 'hello', body: 'world'}]
+      ideasList: [
+        {
+          title: 'hello',
+          body: 'world'
+        }
+      ]
     };
     this.addIdea = this.addIdea.bind(this);
   }
@@ -31,10 +36,10 @@ class App extends Component {
             <IdeaForm
               addIdea={this.addIdea}
             />
-            <IdeaCardList
-              ideaList={ideasList}
-            />
           </section>
+          <IdeaCardList
+            ideaList={ideasList}
+          />
         </article>
       </main>
     );
