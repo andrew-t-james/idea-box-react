@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      ideasList: []
+      ideasList: [{title: 'hello', body: 'world'}]
     };
     this.addIdea = this.addIdea.bind(this);
   }
@@ -21,6 +21,8 @@ class App extends Component {
   }
 
   render() {
+    const { ideasList } = this.state;
+
     return (
       <main>
         <article className="top-half">
@@ -29,7 +31,9 @@ class App extends Component {
             <IdeaForm
               addIdea={this.addIdea}
             />
-            <IdeaCardList />
+            <IdeaCardList
+              ideaList={ideasList}
+            />
           </section>
         </article>
       </main>
