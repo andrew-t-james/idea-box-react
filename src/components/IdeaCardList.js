@@ -8,7 +8,12 @@ const IdeaCardList = props => {
   return (
     <section className="card-section">
       {
-        ideaList.reverse().map((idea, index) => <IdeaCard key={index} idea={idea}/>)
+        ideaList.reverse().map((idea, index) =>
+          <IdeaCard
+            key={index}
+            idea={idea}
+          />
+        )
       }
     </section>
   );
